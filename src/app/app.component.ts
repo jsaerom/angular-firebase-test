@@ -16,6 +16,8 @@ import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'a
   <button (click)="deleteEverything()">Delete All</button>
   `,
 })
+
+
 export class AppComponent {
   items: FirebaseListObservable<any>;
   constructor(af: AngularFire) {
