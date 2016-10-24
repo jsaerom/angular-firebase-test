@@ -1,0 +1,24 @@
+<ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.$value}}
+    </li>
+  </ul>
+
+  <h1>{{ (item | async)?.name}}</h1>
+
+  <div>
+      <form id="add-review">
+      <h2>Review {{currentRestaurant.name}}</h2>
+      <label for="title">Review Title:</label>
+      <input class="form-control" type="text" #title name="title">
+      <label for="comment">Comments:</label>
+      <textarea class="form-control" #comment name="comment"></textarea>
+      <label for="waitTime">Approximate Wait Time (min)</label>
+      <input class="form-control" type="text" #waitTime name="waitTime">
+      <br>
+    <!--  <button (click)="addReview(title.value, comment.value, waitTime.value); title.value=''; comment.value=''; waitTime.value='';" class="btn btn-default center-block">Add Review</button> -->
+      <button (click)="save(title.value, comment.value, waitTime.value)">save review</button>
+      <button (click)="update(title.value, comment.value, waitTime.value)">update review</button>
+      <button (click)="delete()">delete review</button>
+      </form>
+    </div>
